@@ -1,4 +1,4 @@
-# The Agency
+# Agency Agents
 
 > A complete AI agency with 167 specialized agents across 10 divisions — engineering, design, marketing, product, sales, QA, operations, game development, spatial computing, and specialized operations
 

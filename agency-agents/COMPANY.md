@@ -1,7 +1,7 @@
 ---
-name: The Agency
+name: Agency Agents
 description: A complete AI agency with 167 specialized agents across 10 divisions — engineering, design, marketing, product, sales, QA, operations, game development, spatial computing, and specialized operations
-slug: the-agency
+slug: agency-agents
 schema: agentcompanies/v1
 version: 1.0.0
 license: MIT
@@ -22,11 +22,11 @@ metadata:
       usage: referenced
 ---
 
-The Agency is a complete AI organization with 167 agents organized into 10 divisions. Each agent is a domain specialist with deep expertise, a defined personality, and structured workflows.
+Agency Agents is a complete AI organization with 167 agents organized into 10 divisions. Each agent is a domain specialist with deep expertise, a defined personality, and structured workflows.
 
 ## How It Works
 
-The Agency operates on a **hub-and-spoke model**. The Managing Director coordinates across division heads, who manage their teams autonomously. For complex multi-division initiatives, The Agency follows the **NEXUS framework** — a seven-phase pipeline (Discovery, Strategy, Foundation, Build, Hardening, Launch, Operate) with quality gates at each stage.
+Agency Agents operates on a **hub-and-spoke model**. The Managing Director coordinates across division heads, who manage their teams autonomously. For complex multi-division initiatives, Agency Agents follows the **NEXUS framework** — a seven-phase pipeline (Discovery, Strategy, Foundation, Build, Hardening, Launch, Operate) with quality gates at each stage.
 
 ## Divisions
 
