@@ -1,14 +1,25 @@
 ---
-name: heartbeat
-description: System health check that verifies agent operations are running correctly
-metadata:
-  sources:
-    - kind: github-file
-      repo: aaronjmars/aeon
-      path: skills/heartbeat/SKILL.md
-      commit: b14a3f89082dada4e1aba1838cda08ec6555eeba
-      attribution: aaronjmars
-      usage: referenced
+name: Heartbeat
+description: Proactive ambient check — surface anything worth attention
+var: ""
 ---
+> **${var}** — Area to focus on. If empty, runs all checks.
 
-Daily heartbeat check that verifies the system is operational, skills are firing, and no runs have been missed.
+If `${var}` is set, focus checks on that specific area.
+
+
+Read memory/MEMORY.md and the last 2 days of memory/logs/ for context.
+
+Check the following:
+- [ ] Any open PRs stalled > 24h? (use `gh pr list` to check)
+- [ ] Anything flagged in memory that needs follow-up?
+- [ ] Check recent GitHub issues for anything labeled urgent (use `gh issue list`)
+- [ ] Scan aeon.yml for scheduled skills — cross-reference with recent logs to find any that haven't run when expected
+
+Before sending any notification, grep memory/logs/ for the same item. If it appears in the last 48h of logs, skip it. Never notify about the same item twice.
+
+If nothing needs attention, log "HEARTBEAT_OK" and end your response.
+
+If something needs attention:
+1. Send a concise notification via `./notify`
+2. Log the finding and action taken to memory/logs/${today}.md

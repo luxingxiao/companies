@@ -1,14 +1,39 @@
 ---
-name: goal-tracker
-description: Track and report on progress toward defined goals
-metadata:
-  sources:
-    - kind: github-file
-      repo: aaronjmars/aeon
-      path: skills/goal-tracker/SKILL.md
-      commit: b14a3f89082dada4e1aba1838cda08ec6555eeba
-      attribution: aaronjmars
-      usage: referenced
+name: Goal Tracker
+description: Compare current progress against goals stored in MEMORY.md
+var: ""
 ---
+> **${var}** — Specific goal to track. If empty, tracks all goals in MEMORY.md.
 
-Tracks progress toward user-defined goals and reports on status, blockers, and next steps.
+If `${var}` is set, focus only on that specific goal.
+
+
+Read memory/MEMORY.md — specifically the "Goals" or "Next Priorities" section.
+Read the last 14 days of memory/logs/ for evidence of progress.
+
+Steps:
+1. For each goal in MEMORY.md:
+   - Search recent logs for activity related to this goal
+   - Assess status: **on track**, **stalled**, **completed**, or **blocked**
+   - Note specific evidence (dates, log entries, files created)
+2. Format a progress report:
+   ```markdown
+   # Goal Tracker — ${today}
+
+   ## On Track
+   - Goal: evidence of recent progress
+
+   ## Stalled
+   - Goal: last activity was DATE, possible reason
+
+   ## Completed
+   - Goal: completed on DATE
+
+   ## Blocked
+   - Goal: what's blocking it
+   ```
+3. Update MEMORY.md:
+   - Move completed goals to a "Completed" section (with date)
+   - Add notes on blocked goals
+4. Send a summary via `./notify`.
+5. Log what you did to memory/logs/${today}.md.
